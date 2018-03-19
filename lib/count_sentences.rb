@@ -18,6 +18,9 @@ class String
 
 
   def count_sentences
-    self.split(/[.!?]{1,3}/).count
-  end
+    #self.split(/[.!?]{1,3}/).count => my solution
+    #here is the most efficient way
+    self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+
+    end
   end
